@@ -1,0 +1,204 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML style="WIDTH: 350px; HEIGHT: 140px">
+<HEAD>
+<TITLE>Rule</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<STYLE>HTML {
+	FONT-SIZE: 8pt; FONT-FAMILY: MS Shell Dlg; POSITION: absolute
+}
+BODY {
+	FONT-SIZE: 8pt; FONT-FAMILY: MS Shell Dlg; POSITION: absolute
+}
+BUTTON {
+	FONT-SIZE: 8pt; FONT-FAMILY: MS Shell Dlg; POSITION: absolute
+}
+DIV {
+	FONT-SIZE: 8pt; FONT-FAMILY: MS Shell Dlg; POSITION: absolute
+}
+INPUT {
+	FONT-SIZE: 8pt; FONT-FAMILY: MS Shell Dlg; POSITION: absolute
+}
+SELECT {
+	FONT-SIZE: 8pt; FONT-FAMILY: MS Shell Dlg; POSITION: absolute
+}
+FIELDSET {
+	FONT-SIZE: 8pt; FONT-FAMILY: MS Shell Dlg; POSITION: absolute
+}
+</STYLE>
+<SCRIPT language=javascript>
+opener = window.dialogArguments;
+var editor_obj = opener.document.all["_" + opener.getGlobalVar('_editor_field') + "_editor"];
+var table = opener.getGlobalVar('_editor_table');
+var insert = true;
+var editdoc = editor_obj.contentWindow.document;
+var ruleControl;
+if (editdoc.selection.type != 'None'){
+   if (editdoc.selection.type == 'Control'){
+      ruleControl = editdoc.selection.createRange();
+      if (ruleControl.length < 2 ) {
+          if (ruleControl.item(0).tagName == 'HR') {
+             insert = false;
+          }
+      }
+   }
+}
+</SCRIPT>
+<SCRIPT defer>
+function _CloseOnEsc() {
+  if (event.keyCode == 27) { window.close(); return; }
+}
+window.onerror = HandleError
+function HandleError(message, url, line) {
+  var std = "An error has occurred in this dialog." + "\n\n"
+  + "Error: " + line + "\n" + message;
+  alert(std);
+  window.close();
+  return true;
+}
+function Init() {
+  // event handlers  
+  document.body.onkeypress = _CloseOnEsc;
+  var editdoc = editor_obj.contentWindow.document;
+  if (!insert) {
+     document.set.size.value = ruleControl.item(0).size;
+     document.set.alignment.value = ruleControl.item(0).align;
+     background.style.backgroundColor = ruleControl.item(0).color;
+     if (ruleControl.item(0).color == '' || ruleControl.item(0).color == null){
+        background.innerText = '';
+        background.style.background = '';
+     } else {
+        background.innerText = ' ' + ruleControl.item(0).color.toUpperCase();
+        background.style.background =  ruleControl.item(0).color;
+     }
+     if (ruleControl.item(0).width == null){
+        document.set.width.value = '';
+        document.set.eenheid.value = '';
+     } else { 
+        if (ruleControl.item(0).width.search(/%/) < 0) {
+           document.set.eenheid.value= '';
+           document.set.width.value = ruleControl.item(0).width;
+        } else {
+           document.set.width.value = ruleControl.item(0).width.split('%')[0]; 
+           document.set.eenheid.value = '%';
+        }
+     } 
+     if (ruleControl.item(0).noShade){
+        document.set.shade.value = 'noshade';
+     } else {
+        document.set.shade.value = '';
+     }
+  }
+}
+
+function setColors (but) {
+   but.style.borderStyle = 'inset';
+   var color=showModalDialog('gc_setColor.html',but.style.backgroundColor,'resizable:no;help:no;status:no;scroll:no;');
+   if (color == '' || color == null){
+     but.innerText = '';
+     but.style.background = '';
+   } else {
+     but.innerText = ' #' + color.toUpperCase();
+     but.style.background =  color;
+   }
+   but.style.borderStyle = 'outset';
+   return;
+}
+
+
+function returnSelected() {
+
+  if (insert) {
+     var text = '<hr size="' +document.set.size.value+ '"'
+  		  + ' align="' +document.set.alignment.value+ '"'
+                  + ' color="' +background.style.backgroundColor + '"'
+                  + ' width="' +document.set.width.value+document.set.eenheid.value+ '"'         
+		  + ' ' +document.set.shade.value+ ' >';
+     window.returnValue = text;
+  } else {
+     ruleControl.item(0).size = document.set.size.value;
+     ruleControl.item(0).align = document.set.alignment.value;
+     ruleControl.item(0).color = background.style.backgroundColor;
+     ruleControl.item(0).width = document.set.width.value + document.set.eenheid.value;
+     if (document.set.shade.value == 'noshade'){
+        ruleControl.item(0).noShade = true;
+     } else {
+        ruleControl.item(0).noShade = false;
+     }
+     window.returnValue = null;
+  }
+  window.close();
+}
+
+</SCRIPT>
+<META content="MSHTML 6.00.2800.1141" name=GENERATOR>
+</HEAD>
+<BODY 
+style="BACKGROUND: buttonface; MARGIN: 10px; COLOR: windowtext; BORDER-TOP-STYLE: none; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; BORDER-BOTTOM-STYLE: none" 
+scroll=no onload=Init()>
+<FORM name=set method=post><FIELDSET id=fldLayout 
+style="LEFT: 0.47em; WIDTH: 24.93em; TOP: 0.47em; HEIGHT: 8.84em">
+  <DIV id=divFileName 
+style="LEFT: 0.38em; WIDTH: 5em; TOP: 3.12em; HEIGHT: 1.21em">Height:</DIV>
+  <SELECT 
+style="LEFT: 58px; WIDTH: 68px; TOP: 29px" name=size>
+    <OPTION value=1>1 pt</OPTION>
+    <OPTION value=2 selected>2 pt</OPTION>
+    <OPTION value=3>3 pt</OPTION>
+    <OPTION value=4>4 pt</OPTION>
+    <OPTION value=5>5 pt</OPTION>
+    <OPTION value=6>6 pt</OPTION>
+    <OPTION value=7>7 pt</OPTION>
+    <OPTION value=8>8 pt</OPTION>
+    <OPTION value=9>9 pt</OPTION>
+    <OPTION value=10>10 pt</OPTION>
+  </SELECT>
+  <DIV id=divFileName 
+style="LEFT: 0.47em; WIDTH: 5em; TOP: 0.66em; HEIGHT: 1.21em">Width:</DIV>
+  <DIV id=divFileName 
+style="LEFT: 17.34em; WIDTH: 7em; TOP: 1.4em; HEIGHT: 1.21em"> 
+    <INPUT id=width 
+style="LEFT: -127px; WIDTH: 30px; TOP: -11px; HEIGHT: 19px" size=6 value=100 
+name=width>
+  </DIV>
+  <DIV id=divFileName 
+style="LEFT: 12.5em; WIDTH: 5em; TOP: 0.66em; HEIGHT: 1.21em">Alignment</DIV>
+  <DIV id=divFileName 
+style="LEFT: 17em; WIDTH: 7em; TOP: 0.5em; HEIGHT: 1.21em"> 
+    <SELECT 
+style="WIDTH: 68px" name=alignment>
+      <OPTION value=left selected>Left 
+      <OPTION 
+  value=center>Center 
+      <OPTION value=right>Right</OPTION>
+    </SELECT>
+  </DIV>
+  <DIV id=divFileName 
+style="LEFT: 12.5em; WIDTH: 5em; TOP: 3.12em; HEIGHT: 1.21em">Color:</DIV>
+  <DIV id=background 
+style="BORDER-RIGHT: thin outset; BORDER-TOP: thin outset; LEFT: 17em; BORDER-LEFT: thin outset; WIDTH: 6.52em; BORDER-BOTTOM: thin outset; TOP: 2.82em; HEIGHT: 1.85em" 
+onclick=setColors(this); name="background"></DIV>
+  <SELECT 
+style="LEFT: 90px; TOP: 4px" name=eenheid>
+    <OPTION value="">pt</OPTION>
+    <OPTION value=% selected>%</OPTION>
+  </SELECT>
+  <BR>
+  <BR>
+  <BR>
+  <BR>
+  <HR style="LEFT: 0px; WIDTH: 253px; TOP: 4.81em; HEIGHT: 2px" SIZE=2>
+  <DIV id=shade 
+style="LEFT: 0.38em; WIDTH: 4.81em; TOP: 6.3em; HEIGHT: 1.21em">Shade:</DIV>
+  <SELECT 
+style="LEFT: 59px; TOP: 64px" name=shade ?>
+    <OPTION value=shade selected 
+  ?selected?>Shade</OPTION>
+    <OPTION value=noshade ?selected?>No shade</OPTION>
+  </SELECT>
+  <INPUT style="LEFT: 25.03em; WIDTH: 6em; TOP: 0em; HEIGHT: 2.2em" onclick=returnSelected() type=button value=OK>
+  <INPUT style="LEFT: 25.03em; WIDTH: 6em; TOP: 3em; HEIGHT: 2.2em" onclick=window.close() type=button value=Cancel>
+</FORM></FIELDSET>
+</BODY>
+</HTML>
+
+

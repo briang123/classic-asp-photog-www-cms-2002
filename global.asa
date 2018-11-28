@@ -1,0 +1,25 @@
+<!--METADATA NAME="Microsoft ActiveX Data Objects 2.7 Library" TYPE="TypeLib" UUID="{00000206-0000-0010-8000-00AA006D2EA4}"--> 
+<SCRIPT LANGUAGE="VBScript" RUNAT="Server">
+
+Sub Application_OnStart
+	Application("visitors") = 0	
+End Sub
+
+Sub Application_OnEnd
+	Application("total_visitors")=Application("visitors")
+End Sub
+
+Sub Session_OnStart
+	Application.Lock
+	Application("visitors") = Application("visitors") + 1
+	Application.UnLock
+	Session.Timeout=30	
+End Sub
+
+Sub Session_OnEnd
+	Application.Lock
+	Application("visitors") = Application("visitors") - 1
+	Application.UnLock
+End Sub
+
+</SCRIPT>

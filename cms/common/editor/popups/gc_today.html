@@ -1,0 +1,105 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML 
+style="WIDTH: 300px; HEIGHT: 60px"><HEAD><TITLE>Insert Today's Date</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<SCRIPT language=javascript>  
+  <!-- 
+function shortMonthArray() {
+this[0] = "Jan"; this[1] = "Feb"; this[2] = "Mar"; this[3] = "Apr"; this[4] = "May"; this[5] = "Jun";
+this[6] = "Jul"; this[7] = "Aug"; this[8] = "Sep"; this[9] = "Oct"; this[10] = "Nov"; this[11] = "Dec";
+return (this);
+}
+function longMonthArray() {
+this[0] = "January"; this[1] = "February"; this[2] = "March"; this[3] = "April"; this[4] = "May"; this[5] = "June";
+this[6] = "July"; this[7] = "August"; this[8] = "September"; this[9] = "October"; this[10] = "November"; this[11] = "December";
+return (this);
+}
+function NumMonthArray() {
+this[0] = "01"; this[1] = "02"; this[2] = "03"; this[3] = "04"; this[4] = "05"; this[5] = "06";
+this[6] = "07"; this[7] = "08"; this[8] = "09"; this[9] = "10"; this[10] = "11"; this[11] = "12";
+return (this);
+}
+
+function getLongYear(year){
+year = d.getYear();
+if (year < 1000)
+year+=1900;
+return year;
+}
+
+function writeShortDate(){
+shortMonths = new shortMonthArray();
+d = new Date();
+day = d.getDate();
+month = d.getMonth();
+year = d.getYear();
+str = shortMonths[month] +" " +day+ ", " +getLongYear(year);
+document.writeln(str);
+}
+function writeLongDate(){
+longMonths = new longMonthArray();
+d = new Date();
+day = d.getDate();
+month = d.getMonth();
+year = d.getYear();
+str = longMonths[month] + " " +day+ ", " +getLongYear(year);
+document.writeln(str);
+}
+function NumAmerDate(){
+NumMonths = new NumMonthArray();
+d = new Date();
+day = d.getDate();
+month = d.getMonth();
+year = d.getYear();
+str = NumMonths[month] + "/" +day+ "/" +getLongYear(year);
+document.writeln(str);
+}
+// -->
+</SCRIPT>
+
+<SCRIPT language=javascript>
+
+var myDate = window.dialogArguments;
+document.title = myDate;
+
+
+function returnSelected() {
+  var idx  = document.all.textPulldown.selectedIndex;
+  var text = document.all.textPulldown[idx].text;
+
+  window.returnValue = text;          // set return value
+  window.close();                     // close dialog
+}
+
+</SCRIPT>
+
+<SCRIPT defer>
+
+function _CloseOnEsc() {
+  if (event.keyCode == 27) { window.close(); return; }
+}
+ document.body.onkeypress = _CloseOnEsc;
+ </SCRIPT>
+
+<META content="MSHTML 6.00.2800.1141" name=GENERATOR></HEAD>
+<BODY bgColor=#ece9d8 leftMargin=0>
+<FORM onsubmit="Set(document.all.ColorHex.value); return false;" method=get>
+<TABLE cellSpacing=0 cellPadding=0 width="100%" align=center border=0>
+  <TBODY>
+  <TR vAlign=center>
+    <TD>&nbsp;<FONT face=Arial,Helvetica,sans-serif color=#000000 
+      size=2><B>Select Date Format</B>&nbsp;&nbsp;</FONT> <SELECT 
+      name=textPulldown> <OPTION selected>
+        <SCRIPT language=javascript>writeShortDate();</SCRIPT>
+        </OPTION> <OPTION>
+        <SCRIPT language=javascript>writeLongDate();</SCRIPT>
+        </OPTION>  <OPTION>
+        <SCRIPT language=javascript>NumAmerDate();</SCRIPT>
+        </OPTION> </SELECT> </TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=0 cellPadding=0 width="100%" align=center border=0>
+  <TBODY>
+  <TR>
+    <TD><IMG height=8 alt="" src="" width=1 border=0></TD></TR>
+  <TR>
+    <TD>
+      <DIV align=center><INPUT title="Click to insert today's date in the document" onclick=returnSelected() type=button value=" Insert Today's Date "></DIV></TD></TR></TBODY></TABLE></FORM></BODY></HTML>

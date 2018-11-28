@@ -1,0 +1,876 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0056)http://www.webstation1.com/test/htmlarea/popups/mpc.html -->
+<HTML style="WIDTH: 630px; HEIGHT: 355px" 
+xmlns:mpc><HEAD><TITLE>Form Editor</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<STYLE>
+@media All    
+{
+mpc\:container {
+	BEHAVIOR: url(mpc.htc)
+}
+mpc\:page {
+	BEHAVIOR: url(mpc.htc)
+}
+    }
+H1 {
+	FONT: bold 18pt verdana; COLOR: navy
+}
+P {
+	FONT: 10pt verdana
+}
+A:link {
+	COLOR: #003399; TEXT-DECORATION: none
+}
+A:visited {
+	COLOR: #6699cc; TEXT-DECORATION: none
+}
+A:hover {
+	TEXT-DECORATION: underline
+}
+HTML {
+	FONT-SIZE: 8pt; FONT-FAMILY: MS Shell Dlg; POSITION: absolute
+}
+BODY {
+	FONT-SIZE: 8pt; FONT-FAMILY: MS Shell Dlg; POSITION: absolute
+}
+BUTTON {
+	FONT-SIZE: 8pt; FONT-FAMILY: MS Shell Dlg; POSITION: absolute
+}
+DIV {
+	FONT-SIZE: 8pt; FONT-FAMILY: MS Shell Dlg; POSITION: absolute
+}
+INPUT {
+	FONT-SIZE: 8pt; FONT-FAMILY: MS Shell Dlg; POSITION: absolute
+}
+SELECT {
+	FONT-SIZE: 8pt; FONT-FAMILY: MS Shell Dlg; POSITION: absolute
+}
+FIELDSET {
+	FONT-SIZE: 8pt; FONT-FAMILY: MS Shell Dlg; POSITION: absolute
+}
+</STYLE>
+
+<SCRIPT language=JavaScript>
+function TabOrientation()
+{
+	if(oMPC.style.tdTabOrientation == "top")oMPC.style.tdTabOrientation = "bottom" ;
+	else oMPC.style.tdTabOrientation = "top"
+}
+function Height()
+{
+	alert(parseInt(heightBox.value));
+	oMPC.style.height = parseInt(heightBox.value);
+}
+function Width()
+{
+	oMPC.style.width = parseInt(widthBox.value);
+}
+function BackColor()
+{
+	oMPC.style.backgroundColor = BackColorBox.value;
+}
+function Color()
+{
+	oMPC.style.color = ColorBox.value;
+}
+</SCRIPT>
+
+<SCRIPT defer>
+
+function _CloseOnEsc() {
+  if (event.keyCode == 27) { window.close(); return; }
+}
+ document.body.onkeypress = _CloseOnEsc;
+ </SCRIPT>
+
+<META content="MSHTML 6.00.2800.1141" name=GENERATOR></HEAD>
+<BODY bgColor=buttonface onload="oMPC.style.visibility='visible'"><!--TOOLBAR_START--><!--TOOLBAR_EXEMPT--><!--TOOLBAR_END-->
+<DIV style="HEIGHT: 250px"><mpc:container id=oMPC 
+style="LEFT: 7px; VISIBILITY: hidden; WIDTH: 430px; TOP: 25px; HEIGHT: 300px"><mpc:page 
+id=tab1 TABTEXT="FORM" TABTITLE="Insert Form">
+<SCRIPT language=JavaScript src="gc_mpc_files/insert_form.js"></SCRIPT>
+
+<FORM name=set method=post>
+<FIELDSET id=fldLayout 
+style="LEFT: 1.5em; WIDTH: 31.1em; TOP: 8.1em; HEIGHT: 18.3em"><LEGEND>&lt;FORM&gt;</LEGEND></FIELDSET> 
+
+<DIV id=divType 
+style="LEFT: 2.5em; WIDTH: 5em; TOP: 9.9em; HEIGHT: 1.21em">Type</DIV>
+<DIV id=divTypedropdown 
+style="LEFT: 7.8em; WIDTH: 7em; TOP: 9.8em; HEIGHT: 1.21em"><SELECT 
+onchange="javascript: updateTarget();" name=type> <OPTION value=clientemail 
+  selected>Submit form by e-mail<OPTION value=serverscript>Submit form by 
+  script</OPTION></SELECT> </DIV>
+<DIV id=divMethod 
+style="LEFT: 19.9em; WIDTH: 5em; TOP: 9.9em; HEIGHT: 1.21em">Method</DIV>
+<DIV id=divMethoddropdown 
+style="LEFT: 23.6em; WIDTH: 7em; TOP: 9.8em; HEIGHT: 1.21em"><SELECT 
+onchange="javascript: updateTarget();" name=method> <OPTION value=get 
+  selected>Get (default)<OPTION value=post>Post</OPTION></SELECT> </DIV>
+<DIV id=divName 
+style="LEFT: 2.5em; WIDTH: 5em; TOP: 12.2em; HEIGHT: 1.21em">Name <SPAN 
+style="FONT-WEIGHT: normal; FONT-SIZE: 16px; COLOR: red; LINE-HEIGHT: normal; FONT-STYLE: normal; FONT-VARIANT: normal">*</SPAN></DIV><INPUT 
+style="LEFT: 7.8em; WIDTH: 23.6em; TOP: 12.1em; HEIGHT: 2em" size=30 name=name> 
+<DIV id=divAction 
+style="LEFT: 2.5em; WIDTH: 5em; TOP: 14.9em; HEIGHT: 1.21em">Action</DIV><INPUT 
+style="LEFT: 7.8em; WIDTH: 23.6em; TOP: 14.5em; HEIGHT: 2em" disabled size=30 
+value=mailto: name=action> 
+<DIV id=divEnctype 
+style="LEFT: 2.5em; WIDTH: 5em; TOP: 17em; HEIGHT: 1.21em">Enctype</DIV>
+<DIV id=divEnctypedropdown 
+style="LEFT: 7.8em; WIDTH: 7em; TOP: 16.9em; HEIGHT: 1.21em"><SELECT 
+onchange="javascript: updateTarget();" name=enctype> <OPTION value="" 
+  selected>application/x-www-form-urlencoded (default)<OPTION 
+  value=multipart/form-data>multipart/form-data (req. for INPUT 
+  TYPE=FILE)<OPTION value=text/plain>text/plain (for mailto: only)<OPTION 
+  value=image/jpeg>image/jpeg</OPTION></SELECT> </DIV>
+<DIV id=divEmail 
+style="LEFT: 2.5em; WIDTH: 5em; TOP: 19.2em; HEIGHT: 1.21em">Email <SPAN 
+style="FONT-WEIGHT: normal; FONT-SIZE: 16px; COLOR: red; LINE-HEIGHT: normal; FONT-STYLE: normal; FONT-VARIANT: normal">*</SPAN></DIV><INPUT 
+style="LEFT: 7.8em; WIDTH: 23.6em; TOP: 19.2em; HEIGHT: 2em" size=30 name=email> 
+<INPUT style="LEFT: 33.5em; WIDTH: 6em; TOP: 16.3em; HEIGHT: 2.2em" onclick=returnSelected() type=button value=OK> 
+<INPUT style="LEFT: 33.5em; WIDTH: 6em; TOP: 18.5em; HEIGHT: 2.2em" onclick=window.close() type=button value=Cancel> 
+
+<DIV id=divEnctype 
+style="LEFT: 2.5em; WIDTH: 5em; TOP: 21.6em; HEIGHT: 1.21em">Events</DIV>
+<DIV id=divEvent 
+style="LEFT: 7.8em; WIDTH: 7em; TOP: 21.6em; HEIGHT: 1.21em"><SELECT 
+onchange="javascript: updateTarget();" name=event> <OPTION value="" 
+  selected><OPTION value=OnSubmit>OnSubmit<OPTION 
+value=OnReset>OnReset</OPTION></SELECT> </DIV><INPUT 
+style="LEFT: 15.3em; WIDTH: 16.1em; TOP: 21.6em; HEIGHT: 2em" size=30 
+name=inputevent> 
+<DIV id=divStyle 
+style="LEFT: 2.5em; WIDTH: 5em; TOP: 23.9em; HEIGHT: 1.21em">Style</DIV><INPUT 
+style="LEFT: 7.8em; WIDTH: 23.6em; TOP: 23.8em; HEIGHT: 2em" size=30 name=style> 
+</FORM></mpc:page><mpc:page id=tab2 TABTEXT="TEXT" TABTITLE="Input Text">
+<SCRIPT language=JavaScript1.2>
+ //document.title = "Form Editor";
+//var highlightedText = window.dialogArguments;
+   function returnTextBox() {
+	var text = escape( "<INPUT " );
+	text += 'TYPE="text"' //ignored by IE 
+		if (document.textbox.name.value != "") {
+	        text = text + escape( " NAME=" );
+			text = text + escape( document.textbox.name.value );
+			}
+		else {alert("You must type in a Name"); return true;}
+			
+		   text += ' VALUE="' +document.textbox.value.value+ '"'
+				+ ' SIZE="' +document.textbox.size.value+ '"'
+				+ ' MAXLENGTH="' +document.textbox.maxlength.value+ '"'
+		
+	if (document.textbox.eventText.value  !== "" && document.textbox.eventTextValue.value !== "" ){
+	text = text + escape( document.textbox.eventText.value);
+		   text += '="'
+	text = text + escape( document.textbox.eventTextValue.value );
+		   text += '"'
+	}
+			
+		   text += ' DIR="' +document.textbox.DirText.value+ '"'
+				+ ' STYLE="' +document.textbox.styleText.value+ '"'
+	if (document.textbox.IdText.value  !== "" ){
+	text = text + escape( "Id=\"" );
+	text = text + escape( document.textbox.IdText.value );
+	text = text + escape( "\"" );
+	}
+		   text += '>';
+
+	window.returnValue = text;
+	window.close();
+      }
+	  
+    //function paste_link() {
+	//document.textbox.text.value = highlightedText;
+      //}
+</SCRIPT>
+
+<FORM name=textbox method=post>
+<FIELDSET id=fldLayout 
+style="LEFT: 1.5em; WIDTH: 31.1em; TOP: 7.1em; HEIGHT: 18.3em"><LEGEND>INPUT 
+TEXT</LEGEND></FIELDSET> 
+<DIV id=divTextName 
+style="LEFT: 2.5em; WIDTH: 5em; TOP: 10.1em; HEIGHT: 1.21em">Name: <SPAN 
+style="FONT-WEIGHT: normal; FONT-SIZE: 16px; COLOR: red; LINE-HEIGHT: normal; FONT-STYLE: normal; FONT-VARIANT: normal">*</SPAN></DIV><INPUT 
+style="LEFT: 7.8em; WIDTH: 23.6em; TOP: 10.1em; HEIGHT: 2em" size=30 name=name> 
+<DIV id=divTextValue 
+style="LEFT: 2.5em; WIDTH: 5em; TOP: 12.9em; HEIGHT: 1.21em">Value:</DIV><INPUT 
+style="LEFT: 7.8em; WIDTH: 23.6em; TOP: 12.5em; HEIGHT: 2em" size=30 name=value> 
+
+<DIV id=divTextSize 
+style="LEFT: 2.5em; WIDTH: 5em; TOP: 15.3em; HEIGHT: 1.21em">Size:</DIV><INPUT 
+style="LEFT: 7.8em; WIDTH: 8em; TOP: 14.9em; HEIGHT: 2em" size=30 name=size> 
+<DIV id=divTextMax 
+style="LEFT: 16.7em; WIDTH: 8.5em; TOP: 15.3em; HEIGHT: 1.21em">Max. 
+Length:</DIV><INPUT style="LEFT: 23.4em; WIDTH: 8em; TOP: 14.9em; HEIGHT: 2em" 
+size=30 name=maxlength> 
+<DIV id=divTextEvents 
+style="LEFT: 2.5em; WIDTH: 5em; TOP: 17.4em; HEIGHT: 1.21em">Events:</DIV>
+<DIV id=divEventText 
+style="LEFT: 7.8em; WIDTH: 7em; TOP: 17.2em; HEIGHT: 1.21em"><SELECT 
+style="WIDTH: 8em; HEIGHT: 1.21em" name=eventText> <OPTION value="" 
+  selected><OPTION value=OnFocus>OnFocus<OPTION value=OnBlur>OnBlur<OPTION 
+  value=OnSelect>OnSelect<OPTION value=OnChange>OnChange</OPTION></SELECT> 
+</DIV><INPUT style="LEFT: 16.7em; WIDTH: 14.7em; TOP: 17.2em; HEIGHT: 2em" 
+size=30 name=eventTextValue> 
+<DIV id=divStyleText 
+style="LEFT: 2.5em; WIDTH: 5em; TOP: 19.6em; HEIGHT: 1.21em">Style:</DIV><INPUT 
+style="LEFT: 7.8em; WIDTH: 23.6em; TOP: 19.6em; HEIGHT: 2em" size=30 
+name=styleText> 
+<DIV id=divIdText 
+style="LEFT: 2.5em; WIDTH: 9em; TOP: 22.2em; HEIGHT: 1.21em">ID:</DIV><INPUT 
+style="LEFT: 7.8em; WIDTH: 8em; TOP: 22.2em; HEIGHT: 2em" size=30 name=IdText> 
+<DIV id=divDir 
+style="LEFT: 16.7em; WIDTH: 5em; TOP: 22.2em; HEIGHT: 1.21em">Direction:</DIV>
+<DIV id=divDirText 
+style="LEFT: 23.4em; WIDTH: 7em; TOP: 22.2em; HEIGHT: 1.21em"><SELECT 
+name=DirText> <OPTION value="" selected><OPTION value=ltr>Left to Right<OPTION 
+  value=rtl>Right To Left</OPTION></SELECT> </DIV><INPUT style="LEFT: 33.5em; WIDTH: 6em; TOP: 14.3em; HEIGHT: 2.2em" onclick=returnTextBox() type=button value=OK> 
+<INPUT style="LEFT: 33.5em; WIDTH: 6em; TOP: 16.5em; HEIGHT: 2.2em" onclick=window.close() type=button value=Cancel> 
+</FORM></mpc:page><mpc:page id=tab3 TABTEXT="HIDDEN" TABTITLE="Input Hidden">
+<SCRIPT language=JavaScript1.2>
+//document.title = "Form Editor";
+//var highlightedText = window.dialogArguments;
+
+    function returnHidden() {
+	
+	var text = escape( "<INPUT " );
+	text += 'TYPE="hidden"' //ignored by IE 
+		if (document.hidden.hiddenname.value != "") {
+	        text = text + escape( " NAME=" );
+			text = text + escape( document.hidden.hiddenname.value );
+	}
+		else {alert("You must type in a Name"); return true;}
+	
+	if (document.hidden.hiddenvalue.value != "") {
+	        text = text + escape( " VALUE=" );
+			text = text + escape( document.hidden.hiddenvalue.value );
+	}
+		else {alert("You must type in a Value"); return true;}
+	
+	text += '>';	
+
+	window.returnValue = text;
+	window.close();
+      }
+	  
+//function paste_link() {
+//document.textbox.text.value = highlightedText;
+//}
+</SCRIPT>
+
+<FORM name=hidden method=post>
+<FIELDSET id=fldLayout 
+style="LEFT: 1.5em; WIDTH: 31.1em; TOP: 7.1em; HEIGHT: 11.3em"><LEGEND>INPUT 
+HIDDEN</LEGEND></FIELDSET> 
+<DIV id=divHiddenName 
+style="LEFT: 2.5em; WIDTH: 5em; TOP: 10.1em; HEIGHT: 1.21em">Name: <SPAN 
+style="FONT-WEIGHT: normal; FONT-SIZE: 16px; COLOR: red; LINE-HEIGHT: normal; FONT-STYLE: normal; FONT-VARIANT: normal">*</SPAN></DIV><INPUT 
+style="LEFT: 7.8em; WIDTH: 23.6em; TOP: 10.1em; HEIGHT: 2em" size=30 
+name=hiddenname> 
+<DIV id=divHiddenValue 
+style="LEFT: 2.5em; WIDTH: 5em; TOP: 12.9em; HEIGHT: 1.21em">Value: <SPAN 
+style="FONT-WEIGHT: normal; FONT-SIZE: 16px; COLOR: red; LINE-HEIGHT: normal; FONT-STYLE: normal; FONT-VARIANT: normal">*</SPAN></DIV><INPUT 
+style="LEFT: 7.8em; WIDTH: 23.6em; TOP: 12.5em; HEIGHT: 2em" size=30 
+name=hiddenvalue> <INPUT style="LEFT: 33.5em; WIDTH: 6em; TOP: 10.3em; HEIGHT: 2.2em" onclick=returnHidden() type=button value=OK> 
+<INPUT style="LEFT: 33.5em; WIDTH: 6em; TOP: 12.5em; HEIGHT: 2.2em" onclick=window.close() type=button value=Cancel> 
+</FORM></mpc:page><mpc:page id=tab4 TABTEXT="PWD" TABTITLE="Input Password">
+<SCRIPT language=JavaScript1.2>
+ //document.title = "Form Editor";
+//var highlightedText = window.dialogArguments;
+    function returnPwd() {
+	var text = escape( "<INPUT " );
+	text += 'TYPE="password"' 
+		if (document.pwd.pwdname.value != "") {
+	        text = text + escape( " NAME=" );
+			text = text + escape( document.pwd.pwdname.value );
+			}
+		else {alert("You must type in a Name"); return true;}
+           text += ' VALUE="' +document.pwd.pwdvalue.value+ '"'
+				+ ' SIZE="' +document.pwd.pwdsize.value+ '"'
+				+ ' MAXLENGTH="' +document.pwd.pwdmaxlength.value+ '"'
+			
+	if (document.pwd.eventpwd.value  !== "" && document.pwd.eventpwdValue.value !== "" ){
+	text = text + escape( document.pwd.eventpwd.value);
+		   text += '="'
+	text = text + escape( document.pwd.eventpwdValue.value );
+		   text += '"'
+	}
+	
+		   text += ' DIR="' +document.pwd.Dirpwd.value+ '"'
+		        + ' STYLE="' +document.pwd.stylepwd.value+ '"'
+	if (document.pwd.Idpwd.value  !== "" ){
+	text = text + escape( "Id=\"" );
+	text = text + escape( document.pwd.Idpwd.value );
+	text = text + escape( "\"" );
+	}
+		   text += '>';
+	
+	window.returnValue = text;
+	window.close();
+      }
+	  
+    //function paste_link() {
+	//document.pwd.text.value = highlightedText;
+      //}
+</SCRIPT>
+
+<FORM name=pwd method=post>
+<FIELDSET id=fldLayout 
+style="LEFT: 1.5em; WIDTH: 31.1em; TOP: 7.1em; HEIGHT: 18.3em"><LEGEND>INPUT 
+PASSWORD</LEGEND></FIELDSET> 
+<DIV id=divTextName 
+style="LEFT: 2.5em; WIDTH: 5em; TOP: 10.1em; HEIGHT: 1.21em">Name: <SPAN 
+style="FONT-WEIGHT: normal; FONT-SIZE: 16px; COLOR: red; LINE-HEIGHT: normal; FONT-STYLE: normal; FONT-VARIANT: normal">*</SPAN></DIV><INPUT 
+style="LEFT: 7.8em; WIDTH: 23.6em; TOP: 10.1em; HEIGHT: 2em" size=30 
+name=pwdname> 
+<DIV id=divTextValue 
+style="LEFT: 2.5em; WIDTH: 5em; TOP: 12.9em; HEIGHT: 1.21em">Value:</DIV><INPUT 
+style="LEFT: 7.8em; WIDTH: 23.6em; TOP: 12.5em; HEIGHT: 2em" size=30 
+name=pwdvalue> 
+<DIV id=divTextSize 
+style="LEFT: 2.5em; WIDTH: 5em; TOP: 15.3em; HEIGHT: 1.21em">Size:</DIV><INPUT 
+style="LEFT: 7.8em; WIDTH: 8em; TOP: 14.9em; HEIGHT: 2em" size=30 name=pwdsize> 
+<DIV id=divTextMax 
+style="LEFT: 16.7em; WIDTH: 8.5em; TOP: 15.3em; HEIGHT: 1.21em">Max. 
+Length:</DIV><INPUT style="LEFT: 23.4em; WIDTH: 8em; TOP: 14.9em; HEIGHT: 2em" 
+size=30 name=pwdmaxlength> 
+<DIV id=divTextEvents 
+style="LEFT: 2.5em; WIDTH: 5em; TOP: 17.4em; HEIGHT: 1.21em">Events:</DIV>
+<DIV id=divEventText 
+style="LEFT: 7.8em; WIDTH: 7em; TOP: 17.2em; HEIGHT: 1.21em"><SELECT 
+style="WIDTH: 8em; HEIGHT: 1.21em" name=eventpwd> <OPTION value="" 
+  selected><OPTION value=OnFocus>OnFocus<OPTION value=OnBlur>OnBlur<OPTION 
+  value=OnSelect>OnSelect<OPTION value=OnChange>OnChange</OPTION></SELECT> 
+</DIV><INPUT style="LEFT: 16.7em; WIDTH: 14.7em; TOP: 17.2em; HEIGHT: 2em" 
+size=30 name=eventpwdValue> 
+<DIV id=divStyleText 
+style="LEFT: 2.5em; WIDTH: 5em; TOP: 19.6em; HEIGHT: 1.21em">Style:</DIV><INPUT 
+style="LEFT: 7.8em; WIDTH: 23.6em; TOP: 19.6em; HEIGHT: 2em" size=30 
+name=stylepwd> 
+<DIV id=divIdpwd 
+style="LEFT: 2.5em; WIDTH: 9em; TOP: 22.2em; HEIGHT: 1.21em">ID:</DIV><INPUT 
+style="LEFT: 7.8em; WIDTH: 8em; TOP: 22.2em; HEIGHT: 2em" size=30 name=Idpwd> 
+<DIV id=divDir 
+style="LEFT: 16.7em; WIDTH: 5em; TOP: 22.2em; HEIGHT: 1.21em">Direction:</DIV>
+<DIV id=divDirText 
+style="LEFT: 23.4em; WIDTH: 7em; TOP: 22.2em; HEIGHT: 1.21em"><SELECT 
+name=Dirpwd> <OPTION value="" selected><OPTION value=ltr>Left to Right<OPTION 
+  value=rtl>Right To Left</OPTION></SELECT> </DIV><INPUT style="LEFT: 33.5em; WIDTH: 6em; TOP: 14.3em; HEIGHT: 2.2em" onclick=returnPwd() type=button value=OK> 
+<INPUT style="LEFT: 33.5em; WIDTH: 6em; TOP: 16.5em; HEIGHT: 2.2em" onclick=window.close() type=button value=Cancel> 
+</FORM></mpc:page><mpc:page id=tab5 TABTEXT="FILE" TABTITLE="Input File">
+<SCRIPT language=JavaScript1.2>
+ //document.title = "Form Editor";
+//var highlightedText = window.dialogArguments;
+    function returnFile() {
+	var text = escape( "<INPUT " );
+	text += 'TYPE="file"' 
+		if (document.file.filename.value != "") {
+	        text = text + escape( " NAME=" );
+			text = text + escape( document.file.filename.value );
+			}
+		else {alert("You must type in a Name"); return true;}
+           //text += ' VALUE="' +document.file.filevalue.value+ '"'
+			text += ' SIZE="' +document.file.filesize.value+ '"'
+				+ ' MAXLENGTH="' +document.file.filemaxlength.value+ '"'
+			
+	if (document.file.eventfile.value  !== "" && document.file.eventfileValue.value !== "" ){
+	text = text + escape( document.file.eventfile.value);
+		   text += '="'
+	text = text + escape( document.file.eventfileValue.value );
+		   text += '"'
+	}
+	
+		   text + ' STYLE="' +document.file.stylefile.value+ '"'
+	if (document.file.Idfile.value  !== "" ){
+	text = text + escape( "Id=\"" );
+	text = text + escape( document.file.Idfile.value );
+	text = text + escape( "\"" );
+	}
+		   text += '>';
+	
+	window.returnValue = text;
+	window.close();
+      }
+	  
+    //function paste_link() {
+	//document.file.text.value = highlightedText;
+      //}
+</SCRIPT>
+
+<FORM name=file method=post>
+<FIELDSET id=fldLayout 
+style="LEFT: 1.5em; WIDTH: 31.1em; TOP: 7.1em; HEIGHT: 15.9em"><LEGEND>INPUT 
+PASSWORD</LEGEND></FIELDSET> 
+<DIV id=divTextName 
+style="LEFT: 2.5em; WIDTH: 5em; TOP: 10.1em; HEIGHT: 1.21em">Name: <SPAN 
+style="FONT-WEIGHT: normal; FONT-SIZE: 16px; COLOR: red; LINE-HEIGHT: normal; FONT-STYLE: normal; FONT-VARIANT: normal">*</SPAN></DIV><INPUT 
+style="LEFT: 7.8em; WIDTH: 23.6em; TOP: 10.1em; HEIGHT: 2em" size=30 
+name=filename> 
+<DIV id=divTextSize 
+style="LEFT: 2.5em; WIDTH: 5em; TOP: 12.9em; HEIGHT: 1.21em">Size:</DIV><INPUT 
+style="LEFT: 7.8em; WIDTH: 8em; TOP: 12.5em; HEIGHT: 2em" size=30 name=filesize> 
+
+<DIV id=divTextMax 
+style="LEFT: 16.7em; WIDTH: 8.5em; TOP: 12.9em; HEIGHT: 1.21em">Max. 
+Length:</DIV><INPUT style="LEFT: 23.4em; WIDTH: 8em; TOP: 12.5em; HEIGHT: 2em" 
+size=30 name=filemaxlength> 
+<DIV id=divTextEvents 
+style="LEFT: 2.5em; WIDTH: 5em; TOP: 15em; HEIGHT: 1.21em">Events:</DIV>
+<DIV id=divEventText 
+style="LEFT: 7.8em; WIDTH: 7em; TOP: 14.8em; HEIGHT: 1.21em"><SELECT 
+style="WIDTH: 8em; HEIGHT: 1.21em" name=eventfile> <OPTION value="" 
+  selected><OPTION value=OnFocus>OnFocus<OPTION value=OnBlur>OnBlur<OPTION 
+  value=OnSelect>OnSelect<OPTION value=OnChange>OnChange</OPTION></SELECT> 
+</DIV><INPUT style="LEFT: 16.7em; WIDTH: 14.7em; TOP: 14.8em; HEIGHT: 2em" 
+size=30 name=eventfileValue> 
+<DIV id=divStyleText 
+style="LEFT: 2.5em; WIDTH: 5em; TOP: 17.2em; HEIGHT: 1.21em">Style:</DIV><INPUT 
+style="LEFT: 7.8em; WIDTH: 23.6em; TOP: 17.2em; HEIGHT: 2em" size=30 
+name=stylefile> 
+<DIV id=divIdfile 
+style="LEFT: 2.5em; WIDTH: 9em; TOP: 19.8em; HEIGHT: 1.21em">ID:</DIV><INPUT 
+style="LEFT: 7.8em; WIDTH: 8em; TOP: 19.8em; HEIGHT: 2em" size=30 name=Idfile> <INPUT style="LEFT: 33.5em; WIDTH: 6em; TOP: 11.9em; HEIGHT: 2.2em" onclick=returnFile() type=button value=OK> 
+<INPUT style="LEFT: 33.5em; WIDTH: 6em; TOP: 14.1em; HEIGHT: 2.2em" onclick=window.close() type=button value=Cancel> 
+</FORM></mpc:page><mpc:page id=tab6 TABTEXT="RADIO" 
+TABTITLE="Input Radio Button">
+<SCRIPT language=JavaScript1.2>
+//document.title = "Form Editor";
+//var highlightedText = window.dialogArguments;
+
+    function returnRadio() {
+	var text = escape( "<INPUT " );
+	text = text + escape( "TYPE=radio " );
+			if (document.radio.radioname.value != "") {
+	        text = text + escape( " NAME=" );
+			text = text + escape( document.radio.radioname.value );
+			}
+		else {alert("You must type in a Name"); return true;}
+			
+		if (document.radio.radiovalue.value != "") {
+	        text = text + escape( " VALUE=" );
+			text = text + escape( document.radio.radiovalue.value );
+
+	}
+		else {alert("You must type in a Value"); return true;}
+	
+		if (document.radio.eventradio.value  !== "" && document.radio.eventradioValue.value !== "" ){
+			   text += ' '	
+		text = text + escape( document.radio.eventradio.value);
+		   	   text += '="'
+		text = text + escape( document.radio.eventradioValue.value );
+		   	   text += '"'
+	}
+			
+	if (document.radio.Idradio.value  !== "" ){
+	text = text + escape( "Id=\"" );
+	text = text + escape( document.radio.Idradio.value );
+	text = text + escape( "\"" );
+	}
+	
+	if (document.radio.ischeckedradio.checked) {
+			text = text + escape( " CHECKED");
+			}
+	       text +=' STYLE="' +document.radio.styleradio.value+ '"'
+		   text += '>';	
+		
+	if (document.radio.radiocaption.value != "") {
+	text = text + escape( document.radio.radiocaption.value );
+	}
+	
+	window.returnValue = text;
+	window.close();
+      }
+	  
+//function paste_link() {
+//document.radio.text.value = highlightedText;
+//}
+</SCRIPT>
+
+<FORM name=radio method=post>
+<FIELDSET id=fldLayout 
+style="LEFT: 1.5em; WIDTH: 31.1em; TOP: 7.1em; HEIGHT: 18.3em"><LEGEND>INPUT 
+RADIO BUTTON</LEGEND></FIELDSET> 
+<DIV id=divRadiotName 
+style="LEFT: 2.5em; WIDTH: 5em; TOP: 10.1em; HEIGHT: 1.21em">Name: <SPAN 
+style="FONT-WEIGHT: normal; FONT-SIZE: 16px; COLOR: red; LINE-HEIGHT: normal; FONT-STYLE: normal; FONT-VARIANT: normal">*</SPAN></DIV><INPUT 
+style="LEFT: 7.8em; WIDTH: 23.6em; TOP: 10.1em; HEIGHT: 2em" size=30 
+name=radioname> 
+<DIV id=divRadioValue 
+style="LEFT: 2.5em; WIDTH: 5em; TOP: 12.5em; HEIGHT: 1.21em">Value: <SPAN 
+style="FONT-WEIGHT: normal; FONT-SIZE: 16px; COLOR: red; LINE-HEIGHT: normal; FONT-STYLE: normal; FONT-VARIANT: normal">*</SPAN></DIV><INPUT 
+style="LEFT: 7.8em; WIDTH: 23.6em; TOP: 12.5em; HEIGHT: 2em" size=30 
+name=radiovalue> 
+<DIV id=divCaptionRadio 
+style="LEFT: 2.5em; WIDTH: 5em; TOP: 15.3em; HEIGHT: 1.21em">Caption:</DIV><INPUT 
+style="LEFT: 7.8em; WIDTH: 23.6em; TOP: 14.9em; HEIGHT: 2em" size=30 
+name=radiocaption> 
+<DIV id=divRadioEvents 
+style="LEFT: 2.5em; WIDTH: 5em; TOP: 17.4em; HEIGHT: 1.21em">Events:</DIV>
+<DIV id=divRadioText 
+style="LEFT: 7.8em; WIDTH: 7em; TOP: 17.2em; HEIGHT: 1.21em"><SELECT 
+style="WIDTH: 8em; HEIGHT: 1.21em" name=eventradio> <OPTION value="" 
+  selected><OPTION value=OnClick>OnClick</OPTION></SELECT> </DIV><INPUT 
+style="LEFT: 16.7em; WIDTH: 14.7em; TOP: 17.2em; HEIGHT: 2em" size=30 
+name=eventradioValue> 
+<DIV id=divStyleRadio 
+style="LEFT: 2.5em; WIDTH: 5em; TOP: 19.6em; HEIGHT: 1.21em">Style:</DIV><INPUT 
+style="LEFT: 7.8em; WIDTH: 23.6em; TOP: 19.6em; HEIGHT: 2em" size=30 
+name=styleradio> 
+<DIV id=divIdradio 
+style="LEFT: 2.5em; WIDTH: 9em; TOP: 22.2em; HEIGHT: 1.21em">ID:</DIV><INPUT 
+style="LEFT: 7.8em; WIDTH: 8em; TOP: 22.2em; HEIGHT: 2em" size=30 name=Idradio> 
+<DIV id=divIsChecked 
+style="LEFT: 16.7em; WIDTH: 5em; TOP: 22.4em; HEIGHT: 1.21em">Checked:</DIV><INPUT 
+style="LEFT: 21em; WIDTH: 1.5em; TOP: 22.2em; HEIGHT: 2em" type=checkbox 
+name=ischeckedradio> <INPUT style="LEFT: 33.5em; WIDTH: 6em; TOP: 14.3em; HEIGHT: 2.2em" onclick=returnRadio() type=button value=OK> 
+<INPUT style="LEFT: 33.5em; WIDTH: 6em; TOP: 16.5em; HEIGHT: 2.2em" onclick=window.close() type=button value=Cancel> 
+</FORM></mpc:page><mpc:page id=tab7 TABTEXT="CHECKBOX" 
+TABTITLE="Input Checkbox">
+<SCRIPT language=JavaScript1.2>
+//document.title = "Form Editor";
+//var highlightedText = window.dialogArguments;
+
+    function returnCheckBox() {
+	var text = escape( "<INPUT " );
+	text = text + escape( "TYPE=checkbox " );
+			if (document.checkbox.checkboxname.value != "") {
+	        text = text + escape( " NAME=" );
+			text = text + escape( document.checkbox.checkboxname.value );
+			}
+		else {alert("You must type in a Name"); return true;}
+			
+		if (document.checkbox.checkboxvalue.value != "") {
+	        text = text + escape( " VALUE=" );
+			text = text + escape( document.checkbox.checkboxvalue.value );
+
+	}
+		else {alert("You must type in a Value"); return true;}
+	
+		if (document.checkbox.eventcheckbox.value  !== "" && document.checkbox.eventcheckboxValue.value !== "" ){
+			   text += ' '	
+		text = text + escape( document.checkbox.eventcheckbox.value);
+		   	   text += '="'
+		text = text + escape( document.checkbox.eventcheckboxValue.value );
+		   	   text += '"'
+	}
+			
+	if (document.checkbox.Idcheckbox.value  !== "" ){
+	text = text + escape( "Id=\"" );
+	text = text + escape( document.checkbox.Idcheckbox.value );
+	text = text + escape( "\"" );
+	}
+	
+	if (document.checkbox.ischeckedcheckbox.checked) {
+			text = text + escape( " CHECKED");
+			}
+	       text +=' STYLE="' +document.checkbox.stylecheckbox.value+ '"'
+		   text += '>';	
+		
+	if (document.checkbox.checkboxcaption.value != "") {
+	text = text + escape( document.checkbox.checkboxcaption.value );
+	}
+	
+	window.returnValue = text;
+	window.close();
+      }
+	  
+//function paste_link() {
+//document.checkbox.text.value = highlightedText;
+//}
+</SCRIPT>
+
+<FORM name=checkbox method=post>
+<FIELDSET id=fldLayout 
+style="LEFT: 1.5em; WIDTH: 31.1em; TOP: 7.1em; HEIGHT: 18.3em"><LEGEND>INPUT 
+CHECKBOX</LEGEND></FIELDSET> 
+<DIV id=divcheckboxtName 
+style="LEFT: 2.5em; WIDTH: 5em; TOP: 10.1em; HEIGHT: 1.21em">Name: <SPAN 
+style="FONT-WEIGHT: normal; FONT-SIZE: 16px; COLOR: red; LINE-HEIGHT: normal; FONT-STYLE: normal; FONT-VARIANT: normal">*</SPAN></DIV><INPUT 
+style="LEFT: 7.8em; WIDTH: 23.6em; TOP: 10.1em; HEIGHT: 2em" size=30 
+name=checkboxname> 
+<DIV id=divcheckboxValue 
+style="LEFT: 2.5em; WIDTH: 5em; TOP: 12.5em; HEIGHT: 1.21em">Value: <SPAN 
+style="FONT-WEIGHT: normal; FONT-SIZE: 16px; COLOR: red; LINE-HEIGHT: normal; FONT-STYLE: normal; FONT-VARIANT: normal">*</SPAN></DIV><INPUT 
+style="LEFT: 7.8em; WIDTH: 23.6em; TOP: 12.5em; HEIGHT: 2em" size=30 
+name=checkboxvalue> 
+<DIV id=divCaptioncheckbox 
+style="LEFT: 2.5em; WIDTH: 5em; TOP: 15.3em; HEIGHT: 1.21em">Caption:</DIV><INPUT 
+style="LEFT: 7.8em; WIDTH: 23.6em; TOP: 14.9em; HEIGHT: 2em" size=30 
+name=checkboxcaption> 
+<DIV id=divcheckboxEvents 
+style="LEFT: 2.5em; WIDTH: 5em; TOP: 17.4em; HEIGHT: 1.21em">Events:</DIV>
+<DIV id=divcheckboxText 
+style="LEFT: 7.8em; WIDTH: 7em; TOP: 17.2em; HEIGHT: 1.21em"><SELECT 
+style="WIDTH: 8em; HEIGHT: 1.21em" name=eventcheckbox> <OPTION value="" 
+  selected><OPTION value=OnClick>OnClick</OPTION></SELECT> </DIV><INPUT 
+style="LEFT: 16.7em; WIDTH: 14.7em; TOP: 17.2em; HEIGHT: 2em" size=30 
+name=eventcheckboxValue> 
+<DIV id=divStylecheckbox 
+style="LEFT: 2.5em; WIDTH: 5em; TOP: 19.6em; HEIGHT: 1.21em">Style:</DIV><INPUT 
+style="LEFT: 7.8em; WIDTH: 23.6em; TOP: 19.6em; HEIGHT: 2em" size=30 
+name=stylecheckbox> 
+<DIV id=divIdcheckbox 
+style="LEFT: 2.5em; WIDTH: 9em; TOP: 22.2em; HEIGHT: 1.21em">ID:</DIV><INPUT 
+style="LEFT: 7.8em; WIDTH: 8em; TOP: 22.2em; HEIGHT: 2em" size=30 
+name=Idcheckbox> 
+<DIV id=divIsChecked 
+style="LEFT: 16.7em; WIDTH: 5em; TOP: 22.4em; HEIGHT: 1.21em">Checked:</DIV><INPUT 
+style="LEFT: 21em; WIDTH: 1.5em; TOP: 22.2em; HEIGHT: 2em" type=checkbox 
+name=ischeckedcheckbox> <INPUT style="LEFT: 33.5em; WIDTH: 6em; TOP: 14.3em; HEIGHT: 2.2em" onclick=returnCheckBox() type=button value=OK> 
+<INPUT style="LEFT: 33.5em; WIDTH: 6em; TOP: 16.5em; HEIGHT: 2.2em" onclick=window.close() type=button value=Cancel> 
+</FORM></mpc:page><mpc:page id=tab8 TABTEXT="TEXTAREA" 
+TABTITLE="Input Textarea">
+<SCRIPT language=JavaScript1.2>
+ //document.title = "Form Editor";
+//var highlightedText = window.dialogArguments;
+   function returnTextarea() {
+	var text = escape( "<TEXTAREA" );
+	
+		if (document.textarea.textareaname.value != "") {
+	        text = text + escape( " NAME=" );
+			text = text + escape( document.textarea.textareaname.value );
+			}
+		else {alert("You must type in a Name"); return true;}
+			
+		   text += ' VALUE="' +document.textarea.textareavalue.value+ '"'
+				+ ' COLS="' +document.textarea.textareacols.value+ '"'
+				+ ' ROWS="' +document.textarea.textarearows.value+ '"'
+				+ ' WRAP="' +document.textarea.textareawrap.value+ '"'
+						
+	if (document.textarea.eventtextarea.value  !== "" && document.textarea.eventtextareaValue.value !== "" ){
+	text = text + escape( document.textarea.eventtextarea.value);
+		   text += '="'
+	text = text + escape( document.textarea.eventtextareaValue.value );
+		   text += '"'
+	}
+			
+		   text += ' DIR="' +document.textarea.Dirtextarea.value+ '"'
+				+ ' STYLE="' +document.textarea.styletextarea.value+ '"'
+	if (document.textarea.Idtextarea.value  !== "" ){
+	text = text + escape( "Id=\"" );
+	text = text + escape( document.textarea.Idtextarea.value );
+	text = text + escape( "\"" );
+	}
+		   text += '>';
+		   text += '</TEXTAREA>';
+
+	window.returnValue = text;
+	window.close();
+      }
+	  
+    //function paste_link() {
+	//document.textarea.text.value = highlightedText;
+      //}
+</SCRIPT>
+
+<FORM name=textarea method=post>
+<FIELDSET id=fldLayout 
+style="LEFT: 1.5em; WIDTH: 31.1em; TOP: 4.7em; HEIGHT: 20.7em"><LEGEND>TEXT 
+AREA</LEGEND></FIELDSET> 
+<DIV id=divTextareaName 
+style="LEFT: 2.5em; WIDTH: 5em; TOP: 7.7em; HEIGHT: 1.21em">Name: <SPAN 
+style="FONT-WEIGHT: normal; FONT-SIZE: 16px; COLOR: red; LINE-HEIGHT: normal; FONT-STYLE: normal; FONT-VARIANT: normal">*</SPAN></DIV><INPUT 
+style="LEFT: 7.8em; WIDTH: 23.6em; TOP: 7.7em; HEIGHT: 2em" size=30 
+name=textareaname> 
+<DIV id=divTextareaValue 
+style="LEFT: 2.5em; WIDTH: 5em; TOP: 10.5em; HEIGHT: 1.21em">Value:</DIV><INPUT 
+style="LEFT: 7.8em; WIDTH: 23.6em; TOP: 10.1em; HEIGHT: 2em" size=30 
+name=textareavalue> 
+<DIV id=divTextareaValue 
+style="LEFT: 2.5em; WIDTH: 5em; TOP: 12.9em; HEIGHT: 1.21em">Cols:</DIV><INPUT 
+style="LEFT: 7.8em; WIDTH: 8em; TOP: 12.5em; HEIGHT: 2em" size=30 
+name=textareacols> 
+<DIV id=divTextareaValue 
+style="LEFT: 16.7em; WIDTH: 8.55em; TOP: 12.9em; HEIGHT: 1.21em">Rows:</DIV><INPUT 
+style="LEFT: 21.4em; WIDTH: 10em; TOP: 12.5em; HEIGHT: 2em" size=30 
+name=textarearows> 
+<DIV id=divTextareaSize 
+style="LEFT: 2.5em; WIDTH: 5em; TOP: 15.3em; HEIGHT: 1.21em">ID:</DIV><INPUT 
+style="LEFT: 7.8em; WIDTH: 8em; TOP: 14.9em; HEIGHT: 2em" size=30 
+name=Idtextarea> 
+<DIV id=divTextareaMax 
+style="LEFT: 16.7em; WIDTH: 8.5em; TOP: 15.3em; HEIGHT: 1.21em">Wrap:</DIV>
+<DIV id=divEventtextarea 
+style="LEFT: 21.4em; WIDTH: 10em; TOP: 14.9em; HEIGHT: 1.21em"><SELECT 
+style="WIDTH: 10em; HEIGHT: 1.21em" name=textareawrap> <OPTION value=Off 
+  selected>Off<OPTION value=Virtual>Virtual<OPTION 
+  value=Physical>Physical<OPTION value=Soft>Soft<OPTION 
+value=Hard>Hard</OPTION></SELECT> </DIV>
+<DIV id=divtextareaEvents 
+style="LEFT: 2.5em; WIDTH: 5em; TOP: 17.4em; HEIGHT: 1.21em">Events:</DIV>
+<DIV id=divEventtextarea 
+style="LEFT: 7.8em; WIDTH: 7em; TOP: 17.2em; HEIGHT: 1.21em"><SELECT 
+style="WIDTH: 8em; HEIGHT: 1.21em" name=eventtextarea> <OPTION value="" 
+  selected><OPTION value=OnFocus>OnFocus<OPTION value=OnBlur>OnBlur<OPTION 
+  value=OnSelect>OnSelect<OPTION value=OnChange>OnChange</OPTION></SELECT> 
+</DIV><INPUT style="LEFT: 16.7em; WIDTH: 14.7em; TOP: 17.2em; HEIGHT: 2em" 
+size=30 name=eventtextareaValue> 
+<DIV id=divStyleText 
+style="LEFT: 2.5em; WIDTH: 5em; TOP: 19.6em; HEIGHT: 1.21em">Style:</DIV><INPUT 
+style="LEFT: 7.8em; WIDTH: 23.6em; TOP: 19.6em; HEIGHT: 2em" size=30 
+name=styletextarea> 
+<DIV id=divDir 
+style="LEFT: 16.7em; WIDTH: 5em; TOP: 22.2em; HEIGHT: 1.21em">Direction:</DIV>
+<DIV id=divDirText 
+style="LEFT: 21.4em; WIDTH: 10em; TOP: 22.2em; HEIGHT: 1.21em"><SELECT 
+style="WIDTH: 10em; HEIGHT: 1.21em" name=Dirtextarea> <OPTION value="" 
+  selected><OPTION value=ltr>Left to Right<OPTION value=rtl>Right To 
+  Left</OPTION></SELECT> </DIV><INPUT style="LEFT: 33.5em; WIDTH: 6em; TOP: 14.3em; HEIGHT: 2.2em" onclick=returnTextarea() type=button value=OK> 
+<INPUT style="LEFT: 33.5em; WIDTH: 6em; TOP: 16.5em; HEIGHT: 2.2em" onclick=window.close() type=button value=Cancel> 
+</FORM></mpc:page><mpc:page id=tab9 TABTEXT="SUBMIT" TABTITLE="Submit Button">
+<SCRIPT language=JavaScript1.2>
+ //document.title = "Form Editor";
+//var highlightedText = window.dialogArguments;
+function _CloseOnEsc() {
+  if (event.keyCode == 27) { window.close(); return; }
+}
+    function returnSubmit() {
+	var text = escape( "<INPUT " );
+	text += 'TYPE="submit"' 
+			if (document.submit.submitname.value != "") {
+	        text = text + escape( " NAME=" );
+			text = text + escape( document.submit.submitname.value );
+			}
+					
+			if (document.submit.submitvalue.value != "") {
+	        text = text + escape( " VALUE=" );
+			text = text + escape( document.submit.submitvalue.value );
+			}
+			else{
+			text = text + escape( " VALUE=" );
+			text += '"Submit Query"';
+			}
+							
+	if (document.submit.eventsubmit.value  !== "" && document.submit.eventsubmitValue.value !== "" ){
+	text = text + escape( document.submit.eventsubmit.value);
+		   text += '="'
+	text = text + escape( document.submit.eventsubmitValue.value );
+		   text += '"'
+	}
+	
+		   text += ' DIR="' +document.submit.Dirsubmit.value+ '"'
+		        + ' STYLE="' +document.submit.stylesubmit.value+ '"'
+	if (document.submit.Idsubmit.value  !== "" ){
+	text = text + escape( "Id=\"" );
+	text = text + escape( document.submit.Idsubmit.value );
+	text = text + escape( "\"" );
+	}
+		   text += '>';
+	
+	window.returnValue = text;
+	window.close();
+      }
+	  
+    //function paste_link() {
+	//document.submit.text.value = highlightedText;
+      //}
+</SCRIPT>
+
+<FORM name=submit method=post>
+<FIELDSET id=fldLayout 
+style="LEFT: 1.5em; WIDTH: 31.1em; TOP: 7.1em; HEIGHT: 15.9em"><LEGEND>INPUT 
+SUBMIT</LEGEND></FIELDSET> 
+<DIV id=divTextName 
+style="LEFT: 2.5em; WIDTH: 5em; TOP: 10.1em; HEIGHT: 1.21em">Name:</DIV><INPUT 
+style="LEFT: 7.8em; WIDTH: 23.6em; TOP: 10.1em; HEIGHT: 2em" size=30 
+name=submitname> 
+<DIV id=divTextValue 
+style="LEFT: 2.5em; WIDTH: 5em; TOP: 12.9em; HEIGHT: 1.21em">Value:</DIV><INPUT 
+style="LEFT: 7.8em; WIDTH: 23.6em; TOP: 12.5em; HEIGHT: 2em" size=30 
+name=submitvalue> 
+<DIV id=divTextEvents 
+style="LEFT: 2.5em; WIDTH: 5em; TOP: 15em; HEIGHT: 1.21em">Events:</DIV>
+<DIV id=divEventText 
+style="LEFT: 7.8em; WIDTH: 7em; TOP: 14.8em; HEIGHT: 1.21em"><SELECT 
+style="WIDTH: 8em; HEIGHT: 1.21em" name=eventsubmit> <OPTION value="" 
+  selected><OPTION value=OnClick>OnClick</OPTION></SELECT> </DIV><INPUT 
+style="LEFT: 16.7em; WIDTH: 14.7em; TOP: 14.8em; HEIGHT: 2em" size=30 
+name=eventsubmitValue> 
+<DIV id=divStyleText 
+style="LEFT: 2.5em; WIDTH: 5em; TOP: 17.2em; HEIGHT: 1.21em">Style:</DIV><INPUT 
+style="LEFT: 7.8em; WIDTH: 23.6em; TOP: 17.2em; HEIGHT: 2em" size=30 
+name=stylesubmit> 
+<DIV id=divIdsubmit 
+style="LEFT: 2.5em; WIDTH: 9em; TOP: 19.8em; HEIGHT: 1.21em">ID:</DIV><INPUT 
+style="LEFT: 7.8em; WIDTH: 8em; TOP: 19.8em; HEIGHT: 2em" size=30 name=Idsubmit> 
+
+<DIV id=divDir 
+style="LEFT: 16.7em; WIDTH: 5em; TOP: 19.8em; HEIGHT: 1.21em">Direction:</DIV>
+<DIV id=divDirText 
+style="LEFT: 23.4em; WIDTH: 7em; TOP: 19.8em; HEIGHT: 1.21em"><SELECT 
+name=Dirsubmit> <OPTION value="" selected><OPTION value=ltr>Left to 
+  Right<OPTION value=rtl>Right To Left</OPTION></SELECT> </DIV><INPUT style="LEFT: 33.5em; WIDTH: 6em; TOP: 12.1em; HEIGHT: 2.2em" onclick=returnSubmit() type=button value=OK> 
+<INPUT style="LEFT: 33.5em; WIDTH: 6em; TOP: 14.1em; HEIGHT: 2.2em" onclick=window.close() type=button value=Cancel> 
+</FORM></mpc:page><mpc:page id=tab10 TABTEXT="RESET" TABTITLE="Reset Button">
+<SCRIPT language=JavaScript1.2>
+ //document.title = "Form Editor";
+//var highlightedText = window.dialogArguments;
+    function returnReset() {
+	var text = escape( "<INPUT " );
+	text += 'TYPE="reset"' 
+			if (document.reset.resetvalue.value != "") {
+	        text = text + escape( " VALUE=" );
+			text = text + escape( document.reset.resetvalue.value );
+			}
+
+							
+	if (document.reset.eventreset.value  !== "" && document.reset.eventresetValue.value !== "" ){
+	text = text + escape( document.reset.eventreset.value);
+		   text += '="'
+	text = text + escape( document.reset.eventresetValue.value );
+		   text += '"'
+	}
+	
+		   text += ' DIR="' +document.reset.Dirreset.value+ '"'
+		        + ' STYLE="' +document.reset.stylereset.value+ '"'
+	if (document.reset.Idreset.value  !== "" ){
+	text = text + escape( "Id=\"" );
+	text = text + escape( document.reset.Idreset.value );
+	text = text + escape( "\"" );
+	}
+		   text += '>';
+	
+	window.returnValue = text;
+	window.close();
+      }
+	  
+    //function paste_link() {
+	//document.reset.text.value = highlightedText;
+      //}
+</SCRIPT>
+
+<FORM name=reset method=post>
+<FIELDSET id=fldLayout 
+style="LEFT: 1.5em; WIDTH: 31.1em; TOP: 7.1em; HEIGHT: 13.5em"><LEGEND>INPUT 
+reset</LEGEND></FIELDSET> 
+<DIV id=divTextValue 
+style="LEFT: 2.5em; WIDTH: 5em; TOP: 10.3em; HEIGHT: 1.21em">Value:</DIV><INPUT 
+style="LEFT: 7.8em; WIDTH: 23.6em; TOP: 9.9em; HEIGHT: 2em" size=30 
+name=resetvalue> 
+<DIV id=divTextEvents 
+style="LEFT: 2.5em; WIDTH: 5em; TOP: 12.6em; HEIGHT: 1.21em">Events:</DIV>
+<DIV id=divEventText 
+style="LEFT: 7.8em; WIDTH: 7em; TOP: 12.4em; HEIGHT: 1.21em"><SELECT 
+style="WIDTH: 8em; HEIGHT: 1.21em" name=eventreset> <OPTION value="" 
+  selected><OPTION value=OnClick>OnClick</OPTION></SELECT> </DIV><INPUT 
+style="LEFT: 16.7em; WIDTH: 14.7em; TOP: 12.4em; HEIGHT: 2em" size=30 
+name=eventresetValue> 
+<DIV id=divStyleText 
+style="LEFT: 2.5em; WIDTH: 5em; TOP: 14.8em; HEIGHT: 1.21em">Style:</DIV><INPUT 
+style="LEFT: 7.8em; WIDTH: 23.6em; TOP: 14.8em; HEIGHT: 2em" size=30 
+name=stylereset> 
+<DIV id=divIdreset 
+style="LEFT: 2.5em; WIDTH: 9em; TOP: 17.4em; HEIGHT: 1.21em">ID:</DIV><INPUT 
+style="LEFT: 7.8em; WIDTH: 8em; TOP: 17.4em; HEIGHT: 2em" size=30 name=Idreset> 
+<DIV id=divDir 
+style="LEFT: 16.7em; WIDTH: 5em; TOP: 17.4em; HEIGHT: 1.21em">Direction:</DIV>
+<DIV id=divDirText 
+style="LEFT: 23.4em; WIDTH: 7em; TOP: 17.4em; HEIGHT: 1.21em"><SELECT 
+name=Dirreset> <OPTION value="" selected><OPTION value=ltr>Left to 
+  Right<OPTION value=rtl>Right To Left</OPTION></SELECT> </DIV><INPUT style="LEFT: 33.5em; WIDTH: 6em; TOP: 9.6em; HEIGHT: 2.2em" onclick=returnReset() type=button value=OK> 
+<INPUT style="LEFT: 33.5em; WIDTH: 6em; TOP: 11.8em; HEIGHT: 2.2em" onclick=window.close() type=button value=Cancel> 
+</FORM></mpc:page><mpc:page id=tab11 TABTEXT="IMAGE" TABTITLE="Image">[an error 
+occurred while processing this directive]</mpc:page> <mpc:page id=tab12 
+TABTEXT="SELECT" TABTITLE="Button"><!--include virtual="formmgr/input_select.inc" --></mpc:page></mpc:container></DIV></BODY></HTML>

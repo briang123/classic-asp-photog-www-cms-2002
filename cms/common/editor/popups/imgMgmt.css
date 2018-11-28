@@ -1,0 +1,90 @@
+/* CSS Document */
+BODY {
+	FONT-FAMILY: Verdana;
+	FONT-SIZE: 10px;
+	
+}
+TABLE {
+	FONT-SIZE: 10px;
+	FONT-FAMILY: Verdana;
+}
+INPUT {
+	font:8pt verdana,arial,sans-serif;
+}
+select {
+	height: 22px; 
+	top:2;
+	font:8pt verdana,arial,sans-serif;
+}	
+.bar {
+	BORDER: #666666 1px solid; 
+	/*BACKGROUND: #FF8800; */
+	BACKGROUND: #e1ecfc;
+	WIDTH: 100%; 
+	HEIGHT: 20px;
+}
+.imgbar {
+	BORDER-BOTTOM: #666666 1px solid;
+	BACKGROUND: #FF8800; 
+	WIDTH: 100%; 
+	HEIGHT: 20px;
+	TEXT-ALIGN: left;
+}	
+.imgList {
+	BORDER-LEFT: #666666 1px solid;
+	BORDER-RIGHT: #666666 1px solid;
+	BORDER-TOP: #666666 1px solid;
+	BORDER-BOTTOM: #666666 1px solid;
+	WIDTH: 210px;
+}
+.message {
+	COLOR: #666666;
+	FONT-WEIGHT: BOLD;
+	FONT-SIZE: 10px;
+	FONT-FAMILY: Arial, Helvetica, Geneva, Sans-serif;
+}
+.header {
+	COLOR: #FF8800;
+	FONT-WEIGHT: BOLD;
+	FONT-SIZE: 14px;
+	FONT-FAMILY: Arial, Helvetica, Geneva, Sans-serif;
+}
+.imgText {
+	COLOR: #666666;
+	FONT-SIZE: 10px;
+	FONT-FAMILY: Arial, Helvetica, Geneva, Sans-serif;
+}
+.msg {
+	COLOR: #FF0000;
+	FONT-WEIGHT: BOLD;
+}
+.toolBar {
+	HEIGHT:300px;
+	WIDTH:160px;
+	BORDER-LEFT: #666666 1px solid;
+	BORDER-RIGHT: #666666 1px solid;
+	BORDER-BOTTOM: #666666 1px solid;
+}
+.uploadbox {
+	HEIGHT:130px;
+	WIDTH:160px;
+	BORDER-LEFT: #666666 1px solid;
+	BORDER-RIGHT: #666666 1px solid;
+	BORDER-BOTTOM: #666666 1px solid;
+}
+DIV.loading{
+	BACKGROUND-COLOR: #FFFFFF
+  Z-INDEX: 100;
+  LEFT: 43%;
+  FLOAT: none;
+  POSITION: absolute;
+  TOP: 30%;
+	COLOR: #666666;
+}
+.box {
+	WIDTH:700px;
+	BORDER-LEFT: #666666 1px solid;
+	BORDER-RIGHT: #666666 1px solid;
+	BORDER-BOTTOM: #666666 1px solid;
+	BORDER-TOP: #666666 1px solid;
+}

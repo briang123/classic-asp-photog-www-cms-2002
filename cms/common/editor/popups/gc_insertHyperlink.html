@@ -1,0 +1,158 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD W3 HTML 3.2//EN">
+<HTML id=dlgHyperlink STYLE="width: 432px; height: 168px; ">
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="MSThemeCompatible" content="Yes">
+<TITLE>Hyperlink</TITLE>
+<style>
+  html, body, button, div, input, select, fieldset { font-family: MS Shell Dlg; font-size: 8pt; position: absolute; };
+</style>
+
+<script defer>
+
+var myValues = window.dialogArguments;
+
+var URLtext = myValues.href_attribute;
+var highlightedText = myValues.highlightedText;
+var target_attribute = myValues.tar_attribute;
+var linkText = myValues.linkText;
+
+function returnSelected() {
+
+	// if the link is blank, do not return a hyperlink, just the link text
+	var text = "";
+	if (txtHREF.value == '')
+	{
+	  text = escape( txtLinkText.value );
+	}
+	else
+	{
+	  text = escape( "<a href='" );
+	  text = text + escape( txtHREF.value );
+
+	  if (target_attribute != "") {
+		text = text + escape( "' target='" );
+		text = text + escape( target_attribute );
+	  }
+
+	  text = text + escape( "'>" );
+	  text = text + escape( txtLinkText.value );
+	  text = text + escape( "</a>" );
+	}
+
+	window.returnValue = text;			// set return value
+	window.close(); 					// close dialog
+
+}
+
+
+// Now, if a person changes the protocol AFTER having entered the 
+// link, the inputted link info isn't erased.  
+function myChange() {
+				 
+  var selectedItem			= selType.selectedIndex;
+  var selectedItemValue 	= selType.options[selectedItem].value;
+  var selectedItemText		= selType.options[selectedItem].text;
+  var inputtedText			= txtHREF.value;
+
+  var protocol = txtHREF.value.split(":");
+  if (protocol[1]) { // if there's content
+	 var datum = protocol[1].replace(/^\/\//, "");
+	   txtHREF.value = selectedItemValue + datum;
+	}
+	else {
+	if (protocol[0].search(/^(file|gopher|mailto|news|ftp|http|https|telnet|wias)$/) == -1) {
+		  txtHREF.value = selectedItemValue + protocol[0];
+		}		
+		else { txtHREF.value = selectedItemValue; }
+	}
+
+}
+
+function updateTarget() {
+
+  var selectedItem		= selTarget.selectedIndex;
+  var selectedItemValue = selTarget.options[selectedItem].value;
+  target_attribute		= selectedItemValue;
+	
+}
+
+function updateForm() { 
+
+	if (URLtext != '')
+	{
+	  // 1. set protocol
+	  var compare = URLtext.substring(0,5);
+	  for (i=0; i<selType.length; i++) {
+		if (selType.options[i].value.search(compare) != -1) {
+			  selType.options[i].selected = true;
+		  }
+	  }
+
+	  // 2. set link URL
+	  URLtext = URLtext.replace(/\/\/\//, "//");
+
+	  txtHREF.value = URLtext;
+	}
+
+	// 3. set link text
+	if (linkText == '') { txtLinkText.value = highlightedText; }
+	else { txtLinkText.value = linkText; }
+
+	// 4. set target
+	if (target_attribute != '') {
+	for (i=0; i<selTarget.length; i++) {
+	  if (selTarget.options[i].value.search(target_attribute) != -1) {
+		  selTarget.options[i].selected = true;
+		}
+	  }
+	}
+
+}
+
+</script>
+<SCRIPT defer>
+
+function _CloseOnEsc() {
+  if (event.keyCode == 27) { window.close(); return; }
+}
+ document.body.onkeypress = _CloseOnEsc;
+ </SCRIPT>
+</head>
+
+<BODY onload="updateForm();" id=bdy style="background: threedface; color: windowtext;" scroll=no>
+
+<DIV id=divType style="left: 0.98em; top: 1.2168em; width: 4.76em; height: 1.2168em; ">Type:</DIV>
+<SELECT onChange="javascript: myChange();" size=1 name=selType ID=selType tabIndex=20 style="left: 8.54em; top: 1.0647em; width: 6.72em; height: 2.1294em; ">
+<option value="">other
+<option value="file://">File
+<option value="ftp://">FTP
+<option value="gopher:">Gopher
+<option value="http://" selected>HTTP
+<option value="https://">HTTPS
+<option value="mailto:">mailTo
+<option value="news:">News
+<option value="telnet:">Telnet
+</SELECT>
+
+<DIV id=divLink style="left: 0.98em; top: 4.2em; width: 7em; height: 1.2168em; ">Link URL:</DIV>
+<INPUT name=txtHREF ID=txtHREF type=text style="left: 8.54em; top: 3.8em; width: 21.5em;height: 2.1294em; " tabIndex=10 onfocus="select()" value="http://">
+
+<DIV id=divText style="left: 0.98em; top: 7.1067em; width: 6.58em; height: 1.2168em; ">Link Text:</DIV>
+<INPUT type=text name=txtLinkText ID=txtLinkText tabIndex=15 style="left: 8.54em; top: 6.8025em; width: 21.5em; height: 2.1294em; " onfocus="select()">
+
+<DIV id=divTarget style="left: 0.98em; top: 10.45em; width: 4.76em; height: 1.2168em; ">Target:</DIV>
+<SELECT onChange="javascript: updateTarget();" size=1 name=selTarget ID=selTarget tabIndex=20 style="left: 8.54em; top: 10.0647em; width: 6.72em; height: 2.1294em; ">
+<option value="">
+<option value="_blank">_blank
+<option value="_parent">_parent
+<option value="_self">_self
+<option value="_top">_top
+</SELECT>
+
+<BUTTON ID=btnOK style="left: 31.36em; top: 1.0647em; width: 7em; height: 2.2em; " type=submit tabIndex=40 onClick="returnSelected()">OK</BUTTON>
+<BUTTON ID=btnCancel style="left: 31.36em; top: 3.6504em; width: 7em; height: 2.2em; " type=reset tabIndex=45 onClick="window.close();">Cancel</BUTTON>
+
+</body>
+</html>
+
